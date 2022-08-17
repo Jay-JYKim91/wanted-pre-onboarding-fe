@@ -12,7 +12,7 @@ class TodoAPI {
   }
 
   createTodo(todo: string, accessToken: string) {
-    const response = axios.post(`${this.baseURL}/todos`, { todo }, {
+    const response = axios.post(`${this.testURL}/todos`, { todo }, {
       headers: {
         'Authorization': `Bearer ${accessToken}`,
         'Content-Type': 'application/json'
@@ -29,7 +29,7 @@ class TodoAPI {
   }
 
   getTodos(accessToken: string) {
-    const response = axios.get(`${this.baseURL}/todos`, {
+    const response = axios.get(`${this.testURL}/todos`, {
       headers: {
         'Authorization': `Bearer ${accessToken}`
       }
@@ -45,7 +45,7 @@ class TodoAPI {
   }
 
   updateTodo(data: {todo: string, isCompleted: boolean}, accessToken: string, id: number) {
-    const response = axios.put(`${this.baseURL}/todos/${id}`, data, {
+    const response = axios.put(`${this.testURL}/todos/${id}`, data, {
       headers: {
         'Authorization': `Bearer ${accessToken}`,
         'Content-Type': 'application/json'
@@ -62,7 +62,7 @@ class TodoAPI {
   }
 
   deleteTodo(id: number, accessToken: string) {
-    const response = axios.delete(`${this.baseURL}/todos/${id}`, {
+    const response = axios.delete(`${this.testURL}/todos/${id}`, {
       headers: {
         'Authorization': `Bearer ${accessToken}`
       }

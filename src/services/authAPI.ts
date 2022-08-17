@@ -11,7 +11,7 @@ class AuthAPI {
   }
 
   logIn(data: AuthData) {
-    const response = axios.post(`${this.baseURL}/auth/signin`, data, {
+    const response = axios.post(`${this.testURL}/auth/signin`, data, {
       headers: {
         'Content-Type': 'application/json'
       }
@@ -27,7 +27,7 @@ class AuthAPI {
   }
 
   signUp(data: AuthData) {
-    const response = axios.post(`${this.baseURL}/auth/signup`, data, {
+    const response = axios.post(`${this.testURL}/auth/signup`, data, {
       headers: {
         'Content-Type': 'application/json'
       }

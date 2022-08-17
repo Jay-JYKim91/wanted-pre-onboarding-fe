@@ -153,12 +153,21 @@ function Todo({ todo, todoAPI, getTodosReq }: Props) {
       <ListItemIcon sx={{ minWidth: '40px' }}>
         <Checkbox
           edge='start'
+          checked={todo.isCompleted}
           onClick={() => handleCheckboxClicked(todo)}
           tabIndex={-1}
           disableRipple
         />
       </ListItemIcon>
-      <ListItemText id={`todoTitle-${todo.id}`} className='todoTitle' primary={`${todo.todo}`} />
+      <ListItemText
+        id={`todoTitle-${todo.id}`}
+        className='todoTitle'
+        sx={{
+          textDecoration: todo.isCompleted ? 'line-through' : 'none',
+          color: todo.isCompleted ? 'gray' : 'black',
+        }}
+        primary={`${todo.todo}`}
+      />
       <TextField
         sx={{
           '&.MuiTextField-root': {
